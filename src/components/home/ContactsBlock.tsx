@@ -3,34 +3,34 @@
 import { Instagram, MapPin, Phone, MessageCircle, Clock } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
-import { useT } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
 
 export function ContactsBlock() {
-  const t = useT();
+  const t = useTranslations();
   return (
-    <Section title={t.home.contactsTitle}>
+    <Section title={t("home.contactsTitle")}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <ContactCard
           icon={<MapPin className="h-5 w-5" />}
-          title={t.common.address}
-          value={t.home.contactAddress}
+          title={t("common.address")}
+          value={t("home.contactAddress")}
           href="https://2gis.kg/bishkek/firm/70000001075006179"
         />
         <ContactCard
           icon={<Clock className="h-5 w-5" />}
           title="Часы работы"
-          value={t.home.contactHours}
+          value={t("home.contactHours")}
         />
         <ContactCard
           icon={<Phone className="h-5 w-5" />}
-          title={t.common.phone}
-          value={t.home.contactPhone}
+          title={t("common.phone")}
+          value={t("home.contactPhone")}
           href="tel:+996709993289"
         />
         <ContactCard
           icon={<Instagram className="h-5 w-5" />}
           title="Instagram"
-          value={t.home.contactInstagram}
+          value={t("home.contactInstagram")}
           href="https://www.instagram.com/cornerkg_/"
         />
       </div>

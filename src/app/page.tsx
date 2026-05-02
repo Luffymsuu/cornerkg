@@ -1,9 +1,7 @@
 import { Hero } from "@/components/home/Hero";
 import { CategoryTiles } from "@/components/home/CategoryTiles";
 import { HitsRow } from "@/components/home/HitsRow";
-import { BrandsStrip } from "@/components/home/BrandsStrip";
-import { ContactsBlock } from "@/components/home/ContactsBlock";
-import { Reviews } from "@/components/home/Reviews";
+import { BelowFold } from "@/components/home/BelowFold";
 import { listHits, listNew } from "@/lib/data/repository";
 
 export default function HomePage() {
@@ -15,9 +13,8 @@ export default function HomePage() {
       <CategoryTiles />
       <HitsRow products={hits} variant="hits" />
       <HitsRow products={newest} variant="new" />
-      <BrandsStrip />
-      <ContactsBlock />
-      <Reviews />
+      {/* BrandsStrip / ContactsBlock / Reviews are deferred — see BelowFold. */}
+      <BelowFold />
     </>
   );
 }

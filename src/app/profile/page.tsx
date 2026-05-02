@@ -5,25 +5,25 @@ import { Container } from "@/components/ui/Container";
 import { ProfileForm } from "@/components/profile/ProfileForm";
 import { OrderHistory } from "@/components/profile/OrderHistory";
 import { Favorites } from "@/components/profile/Favorites";
-import { useT } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils/cn";
 
 type Tab = "info" | "orders" | "favorites";
 
 export default function ProfilePage() {
-  const t = useT();
+  const t = useTranslations();
   const [tab, setTab] = useState<Tab>("info");
 
   const tabs: Array<{ key: Tab; label: string }> = [
-    { key: "info", label: t.profile.tabsInfo },
-    { key: "orders", label: t.profile.tabsOrders },
-    { key: "favorites", label: t.profile.tabsFavs },
+    { key: "info", label: t("profile.tabsInfo") },
+    { key: "orders", label: t("profile.tabsOrders") },
+    { key: "favorites", label: t("profile.tabsFavs") },
   ];
 
   return (
     <Container className="py-10 sm:py-14">
       <h1 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
-        {t.profile.title}
+        {t("profile.title")}
       </h1>
 
       <div className="mb-6 flex flex-wrap gap-2">

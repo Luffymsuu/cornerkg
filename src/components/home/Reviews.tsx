@@ -3,7 +3,7 @@
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
-import { useT } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
 
 const REVIEWS = [
   {
@@ -25,9 +25,9 @@ const REVIEWS = [
 ];
 
 export function Reviews() {
-  const t = useT();
+  const t = useTranslations();
   return (
-    <Section title={t.home.reviewsTitle}>
+    <Section title={t("home.reviewsTitle")}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {REVIEWS.map((r, idx) => (
           <motion.figure

@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocaleStore } from "@/store/locale";
-import { LOCALES, LOCALE_LABELS, type Locale } from "@/lib/i18n";
+import { LOCALES, LOCALE_LABELS, type Locale } from "@/lib/i18n/config";
 import { cn } from "@/lib/utils/cn";
 
 export function LocaleSwitcher({ className }: { className?: string }) {

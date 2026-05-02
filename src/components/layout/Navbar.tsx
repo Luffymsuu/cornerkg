@@ -6,13 +6,13 @@ import { Heart, Menu, ShoppingBag, User2, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { LocaleSwitcher } from "./LocaleSwitcher";
-import { useT } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
 import { useCartStore } from "@/store/cart";
 import { useFavoritesStore } from "@/store/favorites";
 import { cn } from "@/lib/utils/cn";
 
 export function Navbar() {
-  const t = useT();
+  const t = useTranslations();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const totalQty = useCartStore((s) => s.totalQuantity());
@@ -28,9 +28,9 @@ export function Navbar() {
   }, []);
 
   const links = [
-    { href: "/", label: t.nav.home },
-    { href: "/catalog", label: t.nav.catalog },
-    { href: "/profile", label: t.nav.profile },
+    { href: "/", label: t("nav.home") },
+    { href: "/catalog", label: t("nav.catalog") },
+    { href: "/profile", label: t("nav.profile") },
   ];
 
   return (
@@ -70,7 +70,7 @@ export function Navbar() {
 
           <Link
             href="/profile"
-            aria-label={t.nav.favorites}
+            aria-label={t("nav.favorites")}
             className="relative hidden h-10 w-10 items-center justify-center rounded-full border border-zinc-800 text-zinc-300 transition hover:border-lime-400 hover:text-lime-400 sm:inline-flex"
           >
             <Heart className="h-5 w-5" />
@@ -83,7 +83,7 @@ export function Navbar() {
 
           <Link
             href="/profile"
-            aria-label={t.nav.profile}
+            aria-label={t("nav.profile")}
             className="hidden h-10 w-10 items-center justify-center rounded-full border border-zinc-800 text-zinc-300 transition hover:border-lime-400 hover:text-lime-400 sm:inline-flex"
           >
             <User2 className="h-5 w-5" />
@@ -91,7 +91,7 @@ export function Navbar() {
 
           <Link
             href="/cart"
-            aria-label={t.nav.cart}
+            aria-label={t("nav.cart")}
             className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-800 text-zinc-300 transition hover:border-lime-400 hover:text-lime-400"
           >
             <ShoppingBag className="h-5 w-5" />

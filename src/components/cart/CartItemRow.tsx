@@ -3,13 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Minus, Plus, Trash2 } from "lucide-react";
-import { useT } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
 import { useCartStore } from "@/store/cart";
 import { formatPrice } from "@/lib/utils/formatPrice";
 import type { CartItem } from "@/lib/data/types";
 
 export function CartItemRow({ item }: { item: CartItem }) {
-  const t = useT();
+  const t = useTranslations();
   const setQuantity = useCartStore((s) => s.setQuantity);
   const removeLine = useCartStore((s) => s.removeLine);
 
@@ -42,7 +42,7 @@ export function CartItemRow({ item }: { item: CartItem }) {
             </Link>
             {item.size && (
               <span className="mt-1 inline-block text-xs text-zinc-400">
-                {t.common.size}: {item.size}
+                {t("common.size")}: {item.size}
               </span>
             )}
           </div>
@@ -64,11 +64,11 @@ export function CartItemRow({ item }: { item: CartItem }) {
           />
           <div className="text-right">
             <div className="text-base font-bold text-lime-400">
-              {formatPrice(item.product.price * item.quantity, t.common.currency)}
+              {formatPrice(item.product.price * item.quantity, t("common.currency"))}
             </div>
             {item.quantity > 1 && (
               <div className="text-[10px] text-zinc-500">
-                {formatPrice(item.product.price, t.common.currency)} ×{" "}
+                {formatPrice(item.product.price, t("common.currency"))} ×{" "}
                 {item.quantity}
               </div>
             )}

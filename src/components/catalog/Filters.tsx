@@ -1,6 +1,6 @@
 "use client";
 
-import { useT } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils/cn";
 import { listBrands, listCategories, getPriceBounds } from "@/lib/data/repository";
 import type { Category } from "@/lib/data/types";
@@ -23,7 +23,7 @@ export function Filters({
   onChange: (patch: Partial<FilterValue>) => void;
   onReset: () => void;
 }) {
-  const t = useT();
+  const t = useTranslations();
   const brands = listBrands();
   const categories = listCategories();
   const bounds = getPriceBounds();
@@ -32,28 +32,28 @@ export function Filters({
     <aside className="space-y-6 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
       <div className="flex items-center justify-between">
         <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-300">
-          {t.catalog.filtersTitle}
+          {t("catalog.filtersTitle")}
         </h3>
         <button
           type="button"
           onClick={onReset}
           className="text-xs font-medium text-zinc-400 hover:text-lime-400"
         >
-          {t.common.reset}
+          {t("common.reset")}
         </button>
       </div>
 
       {/* Category */}
       <div>
         <div className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
-          {t.common.category}
+          {t("common.category")}
         </div>
         <div className="flex flex-wrap gap-1.5">
           <Pill
             active={value.category === "all"}
             onClick={() => onChange({ category: "all" })}
           >
-            {t.catalog.categoryAll}
+            {t("catalog.categoryAll")}
           </Pill>
           {categories.map((c) => (
             <Pill
@@ -61,7 +61,7 @@ export function Filters({
               active={value.category === c}
               onClick={() => onChange({ category: c })}
             >
-              {t.categories[c]}
+              {t(`categories.${c}`)}
             </Pill>
           ))}
         </div>
@@ -70,14 +70,14 @@ export function Filters({
       {/* Brand */}
       <div>
         <div className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
-          {t.common.brand}
+          {t("common.brand")}
         </div>
         <div className="flex flex-wrap gap-1.5">
           <Pill
             active={value.brand === "all"}
             onClick={() => onChange({ brand: "all" })}
           >
-            {t.catalog.brandAll}
+            {t("catalog.brandAll")}
           </Pill>
           {brands.map((b) => (
             <Pill
@@ -94,7 +94,7 @@ export function Filters({
       {/* Price */}
       <div>
         <div className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
-          {t.common.price}
+          {t("common.price")}
         </div>
         <div className="flex items-center gap-2">
           <input
@@ -102,7 +102,7 @@ export function Filters({
             inputMode="numeric"
             min={bounds.min}
             max={bounds.max}
-            placeholder={t.common.from}
+            placeholder={t("common.from")}
             value={value.minPrice || ""}
             onChange={(e) =>
               onChange({ minPrice: Number(e.target.value) || 0 })
@@ -115,7 +115,7 @@ export function Filters({
             inputMode="numeric"
             min={bounds.min}
             max={bounds.max}
-            placeholder={t.common.to}
+            placeholder={t("common.to")}
             value={value.maxPrice || ""}
             onChange={(e) =>
               onChange({ maxPrice: Number(e.target.value) || 0 })
@@ -124,15 +124,15 @@ export function Filters({
           />
         </div>
         <div className="mt-2 text-[10px] text-zinc-500">
-          {formatPrice(bounds.min, t.common.currency)} —{" "}
-          {formatPrice(bounds.max, t.common.currency)}
+          {formatPrice(bounds.min, t("common.currency"))} —{" "}
+          {formatPrice(bounds.max, t("common.currency"))}
         </div>
       </div>
 
       {/* Sort */}
       <div>
         <div className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
-          {t.common.sort}
+          {t("common.sort")}
         </div>
         <div className="flex flex-col gap-1.5">
           <Pill
@@ -140,21 +140,21 @@ export function Filters({
             onClick={() => onChange({ sort: "newest" })}
             full
           >
-            {t.common.sortNewest}
+            {t("common.sortNewest")}
           </Pill>
           <Pill
             active={value.sort === "price_asc"}
             onClick={() => onChange({ sort: "price_asc" })}
             full
           >
-            {t.common.sortAsc}
+            {t("common.sortAsc")}
           </Pill>
           <Pill
             active={value.sort === "price_desc"}
             onClick={() => onChange({ sort: "price_desc" })}
             full
           >
-            {t.common.sortDesc}
+            {t("common.sortDesc")}
           </Pill>
         </div>
       </div>

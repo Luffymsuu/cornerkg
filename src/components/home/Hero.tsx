@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
-import { useT } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
-  const t = useT();
+  const t = useTranslations();
   return (
     <section className="relative overflow-hidden border-b border-zinc-900">
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=2000&q=80"
+          src="/hero.jpg"
           alt="streetwear hero"
           fill
           priority
@@ -32,13 +32,13 @@ export function Hero() {
           className="max-w-2xl"
         >
           <span className="inline-block rounded-full border border-lime-400/40 bg-lime-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-lime-300">
-            {t.home.heroKicker}
+            {t("home.heroKicker")}
           </span>
           <h1 className="mt-6 text-4xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-            {t.home.heroTitle}
+            {t("home.heroTitle")}
           </h1>
           <p className="mt-5 max-w-xl text-base text-zinc-300 sm:text-lg">
-            {t.home.heroSubtitle}
+            {t("home.heroSubtitle")}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -47,7 +47,7 @@ export function Hero() {
               size="lg"
               rightIcon={<ArrowRight className="h-4 w-4" />}
             >
-              {t.home.heroCta}
+              {t("home.heroCta")}
             </ButtonLink>
             <ButtonLink
               href="https://wa.me/996709993289"
@@ -55,15 +55,15 @@ export function Hero() {
               size="lg"
               leftIcon={<MessageCircle className="h-4 w-4" />}
             >
-              {t.home.heroCtaSecondary}
+              {t("home.heroCtaSecondary")}
             </ButtonLink>
           </div>
         </motion.div>
 
         <div className="pointer-events-none mt-10 grid grid-cols-3 gap-4 text-center sm:max-w-md">
           <Stat value="52K+" label="Instagram" />
-          <Stat value="2" label={t.footer.branches.toLowerCase()} />
-          <Stat value="100+" label={t.home.brandsTitle.toLowerCase()} />
+          <Stat value="2" label={t("footer.branches").toLowerCase()} />
+          <Stat value="100+" label={t("home.brandsTitle").toLowerCase()} />
         </div>
       </Container>
     </section>

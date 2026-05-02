@@ -5,14 +5,14 @@ import Link from "next/link";
 import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/Badge";
-import { useT } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
 import { useFavoritesStore } from "@/store/favorites";
 import { formatPrice } from "@/lib/utils/formatPrice";
 import { cn } from "@/lib/utils/cn";
 import type { Product } from "@/lib/data/types";
 
 export function ProductCard({ product }: { product: Product }) {
-  const t = useT();
+  const t = useTranslations();
   const fav = useFavoritesStore((s) => s.has(product.id));
   const toggle = useFavoritesStore((s) => s.toggle);
 
@@ -34,8 +34,8 @@ export function ProductCard({ product }: { product: Product }) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="pointer-events-none absolute left-3 top-3 flex flex-col gap-1.5">
-          {product.isHit && <Badge tone="lime">{t.common.hit}</Badge>}
-          {product.isNew && <Badge tone="zinc">{t.common.new}</Badge>}
+          {product.isHit && <Badge tone="lime">{t("common.hit")}</Badge>}
+          {product.isNew && <Badge tone="zinc">{t("common.new")}</Badge>}
           {product.oldPrice && (
             <Badge tone="red">
               -{Math.round((1 - product.price / product.oldPrice) * 100)}%
@@ -75,17 +75,17 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="mt-auto flex items-center justify-between pt-2">
           <div className="flex items-baseline gap-2">
             <span className="text-base font-bold text-lime-400">
-              {formatPrice(product.price, t.common.currency)}
+              {formatPrice(product.price, t("common.currency"))}
             </span>
             {product.oldPrice && (
               <span className="text-xs text-zinc-500 line-through">
-                {formatPrice(product.oldPrice, t.common.currency)}
+                {formatPrice(product.oldPrice, t("common.currency"))}
               </span>
             )}
           </div>
           {product.sizes.length > 0 && (
             <span className="text-[10px] text-zinc-500">
-              {t.common.size}:{" "}
+              {t("common.size")}:{" "}
               {product.sizes.length === 1
                 ? product.sizes[0]
                 : `${product.sizes[0]}–${product.sizes[product.sizes.length - 1]}`}

@@ -6,12 +6,15 @@ import { Container } from "@/components/ui/Container";
 import { ProductGrid } from "@/components/catalog/ProductGrid";
 import { Filters, type FilterValue } from "@/components/catalog/Filters";
 import { listProducts, getPriceBounds } from "@/lib/data/repository";
-import { useT } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { SectionErrorFallback } from "@/components/SectionErrorFallback";
+import { ProductGridSkeleton } from "@/components/ui/Skeleton";
 import type { Category } from "@/lib/data/types";
 import { SlidersHorizontal, X } from "lucide-react";
 
 function CatalogInner() {
-  const t = useT();
+  const t = useTranslations();
   const router = useRouter();
   const params = useSearchParams();
   const bounds = getPriceBounds();
@@ -68,11 +71,11 @@ function CatalogInner() {
       <div className="mb-6 flex items-end justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            {t.catalog.title}
+            {t("catalog.title")}
           </h1>
           <p className="mt-2 text-sm text-zinc-400">
-            {products.length} {t.catalog.itemsCount} ·{" "}
-            {bounds.min}–{bounds.max} {t.common.currency}
+            {products.length} {t("catalog.itemsCount")} ·{" "}
+            {bounds.min}–{bounds.max} {t("common.currency")}
           </p>
         </div>
         <button
@@ -85,7 +88,7 @@ function CatalogInner() {
           ) : (
             <SlidersHorizontal className="h-4 w-4" />
           )}
-          {showFiltersMobile ? t.catalog.hideFilters : t.catalog.showFilters}
+          {showFiltersMobile ? t("catalog.hideFilters") : t("catalog.showFilters")}
         </button>
       </div>
 
@@ -102,13 +105,17 @@ function CatalogInner() {
         )}
 
         <div>
-          {products.length === 0 ? (
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-10 text-center text-zinc-400">
-              {t.catalog.noResults}
-            </div>
-          ) : (
-            <ProductGrid products={products} />
-          )}
+          <ErrorBoundary
+            fallback={(_, reset) => <SectionErrorFallback reset={reset} />}
+          >
+            {products.length === 0 ? (
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-10 text-center text-zinc-400">
+                {t("catalog.noResults")}
+              </div>
+            ) : (
+              <ProductGrid products={products} />
+            )}
+          </ErrorBoundary>
         </div>
       </div>
     </Container>
@@ -117,7 +124,13 @@ function CatalogInner() {
 
 export default function CatalogPage() {
   return (
-    <Suspense fallback={<div className="min-h-[60vh]" />}>
+    <Suspense
+      fallback={
+        <Container className="py-10 sm:py-14">
+          <ProductGridSkeleton count={8} />
+        </Container>
+      }
+    >
       <CatalogInner />
     </Suspense>
   );

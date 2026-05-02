@@ -48,3 +48,10 @@ body {
 .ring-accent-soft {
   box-shadow: 0 0 0 1px rgba(163, 230, 53, 0.4);
 }
+
+/* skeleton loading shimmer */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

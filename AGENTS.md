@@ -11,7 +11,11 @@ E-commerce frontend for the Bishkek streetwear & sneaker reseller **cornerkg**
 - **Zustand 5** for client state (cart, favorites, profile, locale)
 - **Framer Motion** for entrance / hover animations
 - **Embla Carousel** for product galleries & brand strip
-- Custom lightweight i18n in `src/lib/i18n` — Russian / Kyrgyz / English
+- **next-intl** for i18n — Russian / Kyrgyz / English. Messages live in
+  `messages/{ru,kg,en}.json`; the active locale is held in the
+  `useLocaleStore` Zustand store and bridged to next-intl through
+  `src/components/i18n/I18nProvider.tsx` (no locale-prefixed routes).
+- Product imagery is bundled in `public/products/` — no external CDNs.
 - No backend yet — everything persists to `localStorage` through a thin
   repository layer in `src/lib/data` so it can be swapped for Supabase /
   Sanity / a custom REST API later without touching UI code.
@@ -37,11 +41,24 @@ npm run build
 - **Data**: product data is exported from `src/lib/data/products.ts` and
   consumed only via the repository functions in `src/lib/data/repository.ts`.
   When swapping to a real backend, only `repository.ts` changes.
-- **i18n**: components read translations through the `useT()` hook from
-  `src/lib/i18n`. Never hard-code Russian / Kyrgyz / English strings in
-  components — always add a key to `src/lib/i18n/dictionaries.ts`.
-- **Checkout**: the cart form builds a WhatsApp deep-link
-  `https://wa.me/996709993289?text=...` — there is no real backend submission.
+- **i18n**: components read translations through `useTranslations()` from
+  `next-intl`. Never hard-code Russian / Kyrgyz / English strings in
+  components — always add the key to all three files in `messages/`.
+  Locale config (LOCALES, DEFAULT_LOCALE, LOCALE_LABELS) lives in
+  `src/lib/i18n/config.ts`.
+- **Checkout**: the cart form validates inputs (KG phone regex,
+  required fields) via `src/lib/utils/validation.ts`, sanitises them
+  through `src/lib/utils/sanitize.ts`, and builds a WhatsApp deep-link
+  `https://wa.me/996709993289?text=...`. There is no real backend
+  submission.
+- **Resilience**: client subtrees that talk to localStorage / third-
+  party SDKs (Cart, Catalog grid, Product gallery) are wrapped in
+  `<ErrorBoundary>` with `<SectionErrorFallback>`. Route-level errors
+  surface through `src/app/error.tsx`.
+- **Loading states**: every async / hydration boundary uses one of the
+  skeletons in `src/components/ui/Skeleton.tsx`. Below-the-fold home
+  sections (BrandsStrip, ContactsBlock, Reviews) are deferred via
+  `next/dynamic` in `src/components/home/BelowFold.tsx`.
 
 ## File layout
 
@@ -64,9 +81,14 @@ src/
     profile/              # ProfileTabs, OrderHistory
   lib/
     data/                 # Types, mock products, repository
-    i18n/                 # Locale, dictionaries, useT()
-    utils/                # formatPrice, cn, whatsapp helpers
+    i18n/                 # Locale config (next-intl bridge)
+    utils/                # formatPrice, cn, validation, sanitize, whatsapp
   store/                  # Zustand stores
+messages/                 # ru.json / kg.json / en.json (next-intl)
+public/
+  products/               # local product imagery
+  categories/             # local category-tile imagery
+  hero.jpg                # homepage hero background
 ```
 
 ## Adding a real backend later

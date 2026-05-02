@@ -9,14 +9,17 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Gallery } from "./Gallery";
 import { SizePicker } from "./SizePicker";
 import { AddToCart } from "./AddToCart";
-import { useT } from "@/lib/i18n";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { SectionErrorFallback } from "@/components/SectionErrorFallback";
+import { GallerySkeleton } from "@/components/ui/Skeleton";
+import { useTranslations } from "next-intl";
 import { useFavoritesStore } from "@/store/favorites";
 import { formatPrice } from "@/lib/utils/formatPrice";
 import { cn } from "@/lib/utils/cn";
 import type { Product } from "@/lib/data/types";
 
 export function ProductView({ product }: { product: Product }) {
-  const t = useT();
+  const t = useTranslations();
   const fav = useFavoritesStore((s) => s.has(product.id));
   const toggleFav = useFavoritesStore((s) => s.toggle);
   const [size, setSize] = useState<string | undefined>(undefined);
@@ -29,25 +32,33 @@ export function ProductView({ product }: { product: Product }) {
         className="mb-6 inline-flex items-center gap-1 text-sm text-zinc-400 transition hover:text-lime-400"
       >
         <ChevronLeft className="h-4 w-4" />
-        {t.common.back}
+        {t("common.back")}
       </Link>
 
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-        <Gallery images={product.images} alt={product.title} />
+        <ErrorBoundary
+          fallback={(_, reset) => <SectionErrorFallback reset={reset} />}
+        >
+          {product.images.length === 0 ? (
+            <GallerySkeleton />
+          ) : (
+            <Gallery images={product.images} alt={product.title} />
+          )}
+        </ErrorBoundary>
 
         <div className="space-y-6">
           <div>
             <div className="flex flex-wrap items-center gap-2">
-              {product.isHit && <Badge tone="lime">{t.common.hit}</Badge>}
-              {product.isNew && <Badge tone="zinc">{t.common.new}</Badge>}
+              {product.isHit && <Badge tone="lime">{t("common.hit")}</Badge>}
+              {product.isNew && <Badge tone="zinc">{t("common.new")}</Badge>}
               {product.condition && (
                 <Badge tone="zinc">
-                  {t.common.condition}: {product.condition}
+                  {t("common.condition")}: {product.condition}
                 </Badge>
               )}
             </div>
             <div className="mt-3 text-xs font-semibold uppercase tracking-wider text-zinc-500">
-              {product.brand} · {t.categories[product.category]}
+              {product.brand} · {t(`categories.${product.category}`)}
             </div>
             <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
               {product.title}
@@ -56,11 +67,11 @@ export function ProductView({ product }: { product: Product }) {
 
           <div className="flex items-baseline gap-3">
             <span className="text-3xl font-black text-lime-400">
-              {formatPrice(product.price, t.common.currency)}
+              {formatPrice(product.price, t("common.currency"))}
             </span>
             {product.oldPrice && (
               <span className="text-base text-zinc-500 line-through">
-                {formatPrice(product.oldPrice, t.common.currency)}
+                {formatPrice(product.oldPrice, t("common.currency"))}
               </span>
             )}
           </div>
@@ -73,7 +84,7 @@ export function ProductView({ product }: { product: Product }) {
             <div>
               <div className="mb-2 flex items-center justify-between">
                 <span className="text-sm font-semibold uppercase tracking-wider text-zinc-300">
-                  {t.product.sizesTitle}
+                  {t("product.sizesTitle")}
                 </span>
                 {sizeError && (
                   <span className="text-[11px] text-red-400">{sizeError}</span>
@@ -90,7 +101,7 @@ export function ProductView({ product }: { product: Product }) {
             </div>
           ) : (
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3 text-xs text-zinc-400">
-              {t.product.noSizes}
+              {t("product.noSizes")}
             </div>
           )}
 
@@ -109,17 +120,17 @@ export function ProductView({ product }: { product: Product }) {
               )}
             >
               <Heart className={cn("h-4 w-4", fav && "fill-lime-400")} />
-              {t.nav.favorites}
+              {t("nav.favorites")}
             </button>
           </div>
 
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-xs text-zinc-400">
             <div className="font-semibold text-zinc-200">
-              {t.home.contactsTitle}
+              {t("home.contactsTitle")}
             </div>
             <div className="mt-2 space-y-1">
-              <div>{t.home.contactAddress}</div>
-              <div>{t.home.contactHours}</div>
+              <div>{t("home.contactAddress")}</div>
+              <div>{t("home.contactHours")}</div>
             </div>
             <div className="mt-3">
               <ButtonLink

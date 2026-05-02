@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { LOCALES, type Locale } from "@/lib/i18n/dictionaries";
+import { LOCALES, type Locale } from "@/lib/i18n/config";
 
 interface LocaleState {
   locale: Locale;

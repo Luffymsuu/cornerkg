@@ -3,10 +3,9 @@ import type { Product } from "./types";
 /**
  * Mock product catalog for the cornerkg storefront.
  *
- * Images use `images.unsplash.com` so we don't have to host static files.
- * They're picked from the public Unsplash gallery and are permitted for
- * editorial / demo use; replace with the shop's own photos before going
- * live.
+ * Images live under `public/products/` so the storefront has zero
+ * external CDN dependencies. Replace these placeholders with the
+ * shop's own product photos before going live.
  *
  * To add a new product: append a new entry below. The `slug` must be
  * unique and URL-safe.
@@ -22,9 +21,9 @@ export const PRODUCTS: Product[] = [
     oldPrice: 9500,
     sizes: ["40", "41", "42", "43", "44", "45"],
     images: [
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=1200&q=80",
+      "/products/nike-air-max-tn-black-lime-1.jpg",
+      "/products/nike-air-max-tn-black-lime-2.jpg",
+      "/products/yeezy-boost-350-v2-zebra-2.jpg",
     ],
     description:
       "Культовый силуэт Nike Tuned Air. Капсульная подошва из видимого Air, верх из синтетики и сетки. Подходит для уличного образа и спорта.",
@@ -41,8 +40,8 @@ export const PRODUCTS: Product[] = [
     price: 11500,
     sizes: ["40", "41", "42", "43", "44"],
     images: [
-      "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=1200&q=80",
+      "/products/nike-air-jordan-1-low-shadow-1.jpg",
+      "/products/nike-air-jordan-1-low-shadow-2.jpg",
     ],
     description:
       "Классическая расцветка Shadow в низком профиле. Кожаный верх, премиальная подкладка, удобная колодка.",
@@ -59,8 +58,7 @@ export const PRODUCTS: Product[] = [
     price: 8900,
     sizes: ["39", "40", "41", "42", "43"],
     images: [
-      "https://images.unsplash.com/photo-1518894781321-630e638d0742?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1597248374161-426f3d6df621?auto=format&fit=crop&w=1200&q=80",
+      "/products/adidas-samba-og-cloud-white-1.jpg",
     ],
     description:
       "Лонгселлер adidas в винтажной форме. Кожа премиум, замшевая шапочка на носке, T-toe.",
@@ -77,8 +75,8 @@ export const PRODUCTS: Product[] = [
     price: 12900,
     sizes: ["40", "41", "42", "43", "44", "45"],
     images: [
-      "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1605408499391-6368c628ef42?auto=format&fit=crop&w=1200&q=80",
+      "/products/newbalance-2002r-protection-pack-1.jpg",
+      "/products/newbalance-2002r-protection-pack-2.jpg",
     ],
     description:
       "Технологичная пара 2002R в утилитарной расцветке. ABZORB и N-ergy для амортизации.",
@@ -96,8 +94,8 @@ export const PRODUCTS: Product[] = [
     oldPrice: 17000,
     sizes: ["41", "42", "43", "44"],
     images: [
-      "https://images.unsplash.com/photo-1605348532760-6753d2c43329?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=1200&q=80",
+      "/products/yeezy-boost-350-v2-zebra-1.jpg",
+      "/products/yeezy-boost-350-v2-zebra-2.jpg",
     ],
     description:
       "Iconic Zebra расцветка от Канье. Primeknit-верх, подошва Boost.",
@@ -113,8 +111,8 @@ export const PRODUCTS: Product[] = [
     price: 6500,
     sizes: ["S", "M", "L", "XL"],
     images: [
-      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1200&q=80",
+      "/products/champion-reverse-weave-hoodie-1.jpg",
+      "/products/champion-reverse-weave-hoodie-2.jpg",
     ],
     description:
       "Худи Tech Fleece — тёплая, лёгкая, отлично держит форму. Уличный must-have.",
@@ -131,8 +129,8 @@ export const PRODUCTS: Product[] = [
     price: 7900,
     sizes: ["S", "M", "L", "XL"],
     images: [
-      "https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=80",
+      "/products/essentials-fog-hoodie-stone-1.jpg",
+      "/products/essentials-fog-hoodie-stone-2.jpg",
     ],
     description:
       "Базовое худи FOG Essentials. Плотный хлопок, оверсайз-крой.",
@@ -149,8 +147,8 @@ export const PRODUCTS: Product[] = [
     price: 2900,
     sizes: ["S", "M", "L", "XL"],
     images: [
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1200&q=80",
+      "/products/stussy-basic-tee-white-1.jpg",
+      "/products/palace-tee-tri-ferg-2.jpg",
     ],
     description:
       "Классическая футболка Stüssy с фирменным логотипом. Плотный хлопок 220 г/м².",
@@ -166,8 +164,8 @@ export const PRODUCTS: Product[] = [
     price: 5500,
     sizes: ["M", "L", "XL"],
     images: [
-      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=1200&q=80",
+      "/products/supreme-box-logo-tee-black-1.jpg",
+      "/products/supreme-box-logo-tee-black-2.jpg",
     ],
     description: "Iconic Box Logo Tee. Лимитированный дроп Supreme.",
     isHit: true,
@@ -183,8 +181,8 @@ export const PRODUCTS: Product[] = [
     price: 5900,
     sizes: ["S", "M", "L", "XL"],
     images: [
-      "https://images.unsplash.com/photo-1584865288642-42078afe6942?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=1200&q=80",
+      "/products/nike-tech-fleece-pants-grey-1.jpg",
+      "/products/denim-tears-cotton-wreath-jeans-2.jpg",
     ],
     description: "Зауженные джоггеры Tech Fleece, идеальная пара к худи.",
     condition: "новое",
@@ -199,8 +197,8 @@ export const PRODUCTS: Product[] = [
     price: 7200,
     sizes: ["30", "32", "34", "36"],
     images: [
-      "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=1200&q=80",
+      "/products/denim-tears-cotton-wreath-jeans-1.jpg",
+      "/products/carhartt-double-knee-pants-2.jpg",
     ],
     description:
       "Workwear-силуэт от Carhartt WIP. Прочный канвас, усиленные колени.",
@@ -217,8 +215,8 @@ export const PRODUCTS: Product[] = [
     price: 12900,
     sizes: ["S", "M", "L", "XL"],
     images: [
-      "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1200&q=80",
+      "/products/moncler-down-jacket-2.jpg",
+      "/products/moncler-down-jacket-1.jpg",
     ],
     description:
       "Классический пуховик 1996 Nuptse. Тёплый, ветрозащитный, легендарный силуэт.",
@@ -235,8 +233,7 @@ export const PRODUCTS: Product[] = [
     price: 24900,
     sizes: ["M", "L", "XL"],
     images: [
-      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1591047139756-eed30ed0f8ce?auto=format&fit=crop&w=1200&q=80",
+      "/products/stone-island-shadow-jacket-1.jpg",
     ],
     description:
       "Премиальная техническая куртка с фирменным значком Stone Island. Состояние 1/10.",
@@ -252,8 +249,8 @@ export const PRODUCTS: Product[] = [
     price: 3900,
     sizes: [],
     images: [
-      "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1517472292914-9570a594783b?auto=format&fit=crop&w=1200&q=80",
+      "/products/off-white-belt-industrial-1.jpg",
+      "/products/off-white-belt-industrial-2.jpg",
     ],
     description:
       "Фирменный технический ремень Off-White. Подходит к карго и трекам.",
@@ -269,8 +266,8 @@ export const PRODUCTS: Product[] = [
     price: 1500,
     sizes: [],
     images: [
-      "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=1200&q=80",
+      "/products/nike-cap-club-black-1.jpg",
+      "/products/nike-cap-club-black-2.jpg",
     ],
     description: "Базовая бейсболка Nike Club. Регулируемый размер.",
     condition: "новое",
@@ -285,8 +282,7 @@ export const PRODUCTS: Product[] = [
     price: 9500,
     sizes: ["40", "41", "42", "43", "44"],
     images: [
-      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1606753499300-0bf7a91d2af2?auto=format&fit=crop&w=1200&q=80",
+      "/products/asics-gel-1130-cream-1.jpg",
     ],
     description:
       "Винтажный силуэт Asics Gel-1130 в кремовой расцветке. Hype 2024.",
@@ -303,8 +299,8 @@ export const PRODUCTS: Product[] = [
     price: 4500,
     sizes: ["S", "M", "L", "XL"],
     images: [
-      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1200&q=80",
+      "/products/champion-reverse-weave-hoodie-1.jpg",
+      "/products/champion-reverse-weave-hoodie-2.jpg",
     ],
     description: "Базовое худи Champion Reverse Weave, плотное и долговечное.",
     condition: "новое",
@@ -319,8 +315,8 @@ export const PRODUCTS: Product[] = [
     price: 4200,
     sizes: ["S", "M", "L"],
     images: [
-      "https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1200&q=80",
+      "/products/palace-tee-tri-ferg-1.jpg",
+      "/products/palace-tee-tri-ferg-2.jpg",
     ],
     description: "Футболка Palace с фирменным треугольником Tri-Ferg.",
     condition: "новое",
@@ -335,8 +331,7 @@ export const PRODUCTS: Product[] = [
     price: 19900,
     sizes: ["41", "42", "43", "44"],
     images: [
-      "https://images.unsplash.com/photo-1595950653613-3da7e2bc6b8c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=1200&q=80",
+      "/products/balenciaga-track-3xl-2.jpg",
     ],
     description:
       "Массивный силуэт Track 3XL. Многослойная подошва, технологичный верх.",
@@ -352,8 +347,8 @@ export const PRODUCTS: Product[] = [
     price: 49900,
     sizes: ["M", "L", "XL"],
     images: [
-      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1200&q=80",
+      "/products/moncler-down-jacket-1.jpg",
+      "/products/moncler-down-jacket-2.jpg",
     ],
     description:
       "Премиальный пуховик Moncler Maya. Натуральный пух, лёгкий и тёплый.",
@@ -370,8 +365,8 @@ export const PRODUCTS: Product[] = [
     price: 13900,
     sizes: ["30", "32", "34"],
     images: [
-      "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=1200&q=80",
+      "/products/denim-tears-cotton-wreath-jeans-1.jpg",
+      "/products/denim-tears-cotton-wreath-jeans-2.jpg",
     ],
     description:
       "Iconic джинсы Denim Tears с принтом хлопковых венков. Заявление в гардеробе.",
@@ -388,8 +383,8 @@ export const PRODUCTS: Product[] = [
     price: 89900,
     sizes: [],
     images: [
-      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=1200&q=80",
+      "/products/louis-vuitton-keepall-bandouliere-1.jpg",
+      "/products/louis-vuitton-keepall-bandouliere-2.jpg",
     ],
     description: "Дорожная сумка LV Keepall в монограмме. Под состояние 2/10.",
     condition: "2/10, отличное",
