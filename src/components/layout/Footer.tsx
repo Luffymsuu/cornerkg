@@ -10,15 +10,17 @@ export function Footer() {
   return (
     <footer className="mt-20 border-t border-zinc-800 bg-zinc-950">
       <Container className="py-12">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-2">
             <div className="flex items-center gap-2">
               <span className="rounded-md bg-lime-400 px-2 py-1 text-xs font-black uppercase text-zinc-950">
                 CK
               </span>
               <span className="text-lg font-bold tracking-tight">cornerkg</span>
             </div>
-            <p className="mt-4 text-sm text-zinc-400">{t("footer.tagline")}</p>
+            <p className="mt-4 max-w-xs text-sm text-zinc-400">
+              {t("footer.tagline")}
+            </p>
           </div>
 
           <div>
@@ -51,12 +53,29 @@ export function Footer() {
 
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-zinc-300">
-              {t("footer.branches")}
+              {t("footer.info")}
             </h4>
             <ul className="mt-3 space-y-2 text-sm text-zinc-400">
-              <li>{t("footer.mainBranch")}</li>
-              <li>{t("footer.secondBranch")}</li>
-              <li>{t("footer.classicBranch")}</li>
+              <li>
+                <Link href="/about" className="hover:text-lime-400">
+                  {t("nav.about")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/info/delivery" className="hover:text-lime-400">
+                  {t("nav.delivery")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/info/returns" className="hover:text-lime-400">
+                  {t("nav.returns")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-lime-400">
+                  {t("nav.faq")}
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -105,7 +124,11 @@ export function Footer() {
           <span>
             © {new Date().getFullYear()} cornerkg. {t("footer.rights")}.
           </span>
-          <span>made for streetwear lovers</span>
+          <div className="flex flex-wrap items-center gap-3 text-zinc-500">
+            <span>{t("footer.mainBranch")}</span>
+            <span className="hidden sm:inline">·</span>
+            <span>{t("footer.classicBranch")}</span>
+          </div>
         </div>
       </Container>
     </footer>

@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SectionErrorFallback } from "@/components/SectionErrorFallback";
 import { ProductGridSkeleton } from "@/components/ui/Skeleton";
+import { formatPrice } from "@/lib/utils/formatPrice";
 import type { Category } from "@/lib/data/types";
 import { SlidersHorizontal, X } from "lucide-react";
 
@@ -74,8 +75,10 @@ function CatalogInner() {
             {t("catalog.title")}
           </h1>
           <p className="mt-2 text-sm text-zinc-400">
-            {products.length} {t("catalog.itemsCount")} ·{" "}
-            {bounds.min}–{bounds.max} {t("common.currency")}
+            {t("catalog.itemsCount", { count: products.length })} ·{" "}
+            {formatPrice(bounds.min, t("common.currency"))}
+            {"\u00A0—\u00A0"}
+            {formatPrice(bounds.max, t("common.currency"))}
           </p>
         </div>
         <button

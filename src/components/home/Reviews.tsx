@@ -5,33 +5,16 @@ import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { useTranslations } from "next-intl";
 
-const REVIEWS = [
-  {
-    name: "Айдана",
-    text: "Покупаю уже не первый раз. Кроссы — оригиналы, упаковка как из бутика. 10/10.",
-  },
-  {
-    name: "Тимур",
-    text: "Заказал Tech Fleece — забрал в этот же день из 2-го филиала. Менеджер на связи 24/7.",
-  },
-  {
-    name: "Begaiym",
-    text: "Лучший выбор стрит-стайла в Бишкеке. Цены ок, бренды реально топ.",
-  },
-  {
-    name: "Илья",
-    text: "Брал ресейл-кеды Yeezy, состояние в коробке — как обещали. Респект.",
-  },
-];
+const REVIEW_IDS = ["1", "2", "3", "4"] as const;
 
 export function Reviews() {
   const t = useTranslations();
   return (
     <Section title={t("home.reviewsTitle")}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {REVIEWS.map((r, idx) => (
+        {REVIEW_IDS.map((id, idx) => (
           <motion.figure
-            key={r.name}
+            key={id}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -44,10 +27,10 @@ export function Reviews() {
               ))}
             </div>
             <blockquote className="mt-3 text-sm text-zinc-200">
-              “{r.text}”
+              «{t(`reviews.${id}.text`)}»
             </blockquote>
             <figcaption className="mt-4 text-xs font-semibold uppercase tracking-wider text-zinc-500">
-              — {r.name}
+              — {t(`reviews.${id}.name`)}
             </figcaption>
           </motion.figure>
         ))}

@@ -11,10 +11,27 @@ import { formatPrice } from "@/lib/utils/formatPrice";
 import { cn } from "@/lib/utils/cn";
 import type { Product } from "@/lib/data/types";
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({
+  product,
+  hideHitBadge = false,
+}: {
+  product: Product;
+  /** Hide the "ХИТ" badge (e.g. when rendered inside the "Hits" section to avoid tautology). */
+  hideHitBadge?: boolean;
+}) {
   const t = useTranslations();
   const fav = useFavoritesStore((s) => s.has(product.id));
   const toggle = useFavoritesStore((s) => s.toggle);
+
+  // Show up to 4 explicit sizes; collapse longer lists with an ellipsis.
+  // Avoids the misleading "40–45" diapason that implies every size in between
+  // is in stock.
+  const sizesPreview =
+    product.sizes.length === 0
+      ? null
+      : product.sizes.length <= 4
+        ? product.sizes.join(", ")
+        : `${product.sizes.slice(0, 4).join(", ")}…`;
 
   return (
     <motion.div
@@ -34,7 +51,9 @@ export function ProductCard({ product }: { product: Product }) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="pointer-events-none absolute left-3 top-3 flex flex-col gap-1.5">
-          {product.isHit && <Badge tone="lime">{t("common.hit")}</Badge>}
+          {product.isHit && !hideHitBadge && (
+            <Badge tone="lime">{t("common.hit")}</Badge>
+          )}
           {product.isNew && <Badge tone="zinc">{t("common.new")}</Badge>}
           {product.oldPrice && (
             <Badge tone="red">
@@ -83,12 +102,9 @@ export function ProductCard({ product }: { product: Product }) {
               </span>
             )}
           </div>
-          {product.sizes.length > 0 && (
+          {sizesPreview && (
             <span className="text-[10px] text-zinc-500">
-              {t("common.size")}:{" "}
-              {product.sizes.length === 1
-                ? product.sizes[0]
-                : `${product.sizes[0]}–${product.sizes[product.sizes.length - 1]}`}
+              {t("common.size")}: {sizesPreview}
             </span>
           )}
         </div>

@@ -59,24 +59,7 @@ export function Hero() {
             </ButtonLink>
           </div>
         </motion.div>
-
-        <div className="pointer-events-none mt-10 grid grid-cols-3 gap-4 text-center sm:max-w-md">
-          <Stat value="52K+" label="Instagram" />
-          <Stat value="2" label={t("footer.branches").toLowerCase()} />
-          <Stat value="100+" label={t("home.brandsTitle").toLowerCase()} />
-        </div>
       </Container>
     </section>
-  );
-}
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/60 p-3 backdrop-blur">
-      <div className="text-2xl font-black text-lime-400 sm:text-3xl">{value}</div>
-      <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-zinc-400">
-        {label}
-      </div>
-    </div>
   );
 }

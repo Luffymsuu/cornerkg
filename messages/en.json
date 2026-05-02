@@ -4,7 +4,11 @@
     "catalog": "Catalog",
     "cart": "Cart",
     "profile": "Profile",
-    "favorites": "Favorites"
+    "favorites": "Favorites",
+    "delivery": "Delivery",
+    "returns": "Returns",
+    "faq": "FAQ",
+    "about": "About"
   },
   "common": {
     "currency": "KGS",
@@ -53,7 +57,8 @@
     "requiredField": "Required field",
     "invalidPhone": "Enter a valid phone: +996XXXXXXXXX or 0XXXXXXXXX",
     "tooLong": "Too long",
-    "loading": "Loading…"
+    "loading": "Loading…",
+    "writeOnWhatsapp": "Message us on WhatsApp"
   },
   "categories": {
     "sneakers": "Sneakers",
@@ -65,11 +70,11 @@
     "all": "All"
   },
   "home": {
-    "heroKicker": "Bishkek • Daily 10am — 9pm",
+    "heroKicker": "Bishkek • Daily 10:00 — 21:00",
     "heroTitle": "Streetwear & sneakers in Bishkek",
-    "heroSubtitle": "Cornerkg — original drops and rare reseller pairs. 2 stores, KR-wide delivery, flexible payments.",
+    "heroSubtitle": "Cornerkg — original drops and rare reseller pairs. KG-wide delivery, payments by card, transfer or cash.",
     "heroCta": "Shop catalog",
-    "heroCtaSecondary": "WhatsApp us",
+    "heroCtaSecondary": "Message us on WhatsApp",
     "categoriesTitle": "Categories",
     "hitsTitle": "Best sellers",
     "newTitle": "New arrivals",
@@ -80,7 +85,7 @@
     "contactHours": "Every day, 10:00 — 21:00",
     "contactPhone": "+996 709 99 32 89",
     "contactInstagram": "@cornerkg_",
-    "contactBranches": "2 branches + classic store",
+    "contactBranches": "2 stores in Bishkek",
     "hoursLabel": "Opening hours"
   },
   "catalog": {
@@ -89,7 +94,7 @@
     "categoryAll": "All categories",
     "brandAll": "All brands",
     "noResults": "No items match your filters",
-    "itemsCount": "items",
+    "itemsCount": "{count, plural, one {# item} other {# items}}",
     "showFilters": "Filters",
     "hideFilters": "Hide"
   },
@@ -110,7 +115,7 @@
     "total": "Total",
     "checkoutTitle": "Checkout",
     "submit": "Send via WhatsApp",
-    "hint": "Tapping \"Send via WhatsApp\" opens a chat with the store manager with a pre-filled message."
+    "hint": "Tapping «Send via WhatsApp» opens a chat with the store manager with a pre-filled message."
   },
   "profile": {
     "title": "Profile",
@@ -124,13 +129,51 @@
     "orderDate": "Date",
     "orderStatusSent": "Sent to WhatsApp"
   },
+  "reviews": {
+    "1": {
+      "name": "Aidana",
+      "text": "Not my first order here. Sneakers are originals, packaging like from a boutique. 10/10."
+    },
+    "2": {
+      "name": "Timur",
+      "text": "Ordered Tech Fleece — picked it up the same day at the 2nd store. Manager replied fast, size was right."
+    },
+    "3": {
+      "name": "Begaiym",
+      "text": "Best streetwear selection in Bishkek. Prices ok, brands really top."
+    },
+    "4": {
+      "name": "Ilya",
+      "text": "Bought reseller Yeezys — deadstock condition just like promised. Respect."
+    }
+  },
   "footer": {
     "tagline": "Cornerkg — streetwear store in Bishkek",
-    "branches": "Branches",
+    "branches": "Stores",
     "mainBranch": "Main: Togolok Moldo 5 / Kievskaya",
     "secondBranch": "2nd: @cornerkg_2",
-    "classicBranch": "Classic: @corner_classickg",
+    "classicBranch": "Vintage: @corner_classickg",
+    "info": "Info",
     "rights": "All rights reserved"
+  },
+  "pages": {
+    "stubMessage": "This section is being prepared. For now — DM us on WhatsApp, the manager replies right away.",
+    "delivery": {
+      "title": "Delivery & payment",
+      "subtitle": "Pickup in Bishkek and delivery across Kyrgyzstan"
+    },
+    "returns": {
+      "title": "Returns & exchanges",
+      "subtitle": "14-day return and exchange policy"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "Answers to typical customer questions"
+    },
+    "about": {
+      "title": "About the store",
+      "subtitle": "Cornerkg in Bishkek — streetwear, reseller, originals"
+    }
   },
   "errors": {
     "title": "Something went wrong",

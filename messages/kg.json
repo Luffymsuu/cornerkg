@@ -4,7 +4,11 @@
     "catalog": "Каталог",
     "cart": "Себет",
     "profile": "Профиль",
-    "favorites": "Тандалган"
+    "favorites": "Тандалган",
+    "delivery": "Жеткирүү",
+    "returns": "Кайтаруу",
+    "faq": "FAQ",
+    "about": "Биз жөнүндө"
   },
   "common": {
     "currency": "сом",
@@ -53,7 +57,8 @@
     "requiredField": "Толтуруу милдеттүү",
     "invalidPhone": "Туура номер жазыңыз: +996XXXXXXXXX же 0XXXXXXXXX",
     "tooLong": "Өтө узун",
-    "loading": "Жүктөлүүдө…"
+    "loading": "Жүктөлүүдө…",
+    "writeOnWhatsapp": "WhatsApp'та жазуу"
   },
   "categories": {
     "sneakers": "Кроссовкалар",
@@ -65,11 +70,11 @@
     "all": "Баары"
   },
   "home": {
-    "heroKicker": "Бишкек • 10:00 — 21:00",
+    "heroKicker": "Бишкек • күн сайын 10:00 — 21:00",
     "heroTitle": "Бишкектеги стрит-стайл жана кроссовкалар",
-    "heroSubtitle": "Cornerkg — түп нуска жана сейрек ресейл кроссовкалар. 2 филиал, республика боюнча жеткирүү.",
+    "heroSubtitle": "Cornerkg — түп нуска жана сейрек ресейл кроссовкалар. Кыргызстан боюнча жеткирүү, карта, котормо же накталай төлөм.",
     "heroCta": "Каталогго",
-    "heroCtaSecondary": "WhatsApp",
+    "heroCtaSecondary": "WhatsApp'та жазуу",
     "categoriesTitle": "Категориялар",
     "hitsTitle": "Эң популярдуу",
     "newTitle": "Жаңылыктар",
@@ -80,7 +85,7 @@
     "contactHours": "Күн сайын, 10:00 — 21:00",
     "contactPhone": "+996 709 99 32 89",
     "contactInstagram": "@cornerkg_",
-    "contactBranches": "2 филиал + классика",
+    "contactBranches": "Бишкекте 2 дүкөн",
     "hoursLabel": "Иштөө убактысы"
   },
   "catalog": {
@@ -89,7 +94,7 @@
     "categoryAll": "Бардык категориялар",
     "brandAll": "Бардык бренддер",
     "noResults": "Чыпкалар боюнча эч нерсе табылган жок",
-    "itemsCount": "товар",
+    "itemsCount": "{count, plural, one {# товар} other {# товар}}",
     "showFilters": "Чыпкалар",
     "hideFilters": "Жашыруу"
   },
@@ -124,13 +129,51 @@
     "orderDate": "Күнү",
     "orderStatusSent": "WhatsAppга жиберилди"
   },
+  "reviews": {
+    "1": {
+      "name": "Айдана",
+      "text": "Бул жерден кайра-кайра алам. Кроссовкалар — түп нуска, таңгак бутиктегидей. 10/10."
+    },
+    "2": {
+      "name": "Тимур",
+      "text": "Tech Fleece заказ кылгам — ошол эле күнү 2-дүкөндөн алдым. Менеджер тез жооп берди, өлчөм келди."
+    },
+    "3": {
+      "name": "Бегайым",
+      "text": "Бишкектеги эң мыкты стрит-стайл тандоо. Баасы окей, бренддер чындап топ."
+    },
+    "4": {
+      "name": "Илья",
+      "text": "Yeezy ресейл алгам, кутудагы абалы — убада кылгандай. Чоң рахмат."
+    }
+  },
   "footer": {
     "tagline": "Cornerkg — Бишкектеги стрит-стайл дүкөн",
-    "branches": "Филиалдар",
+    "branches": "Дүкөндөр",
     "mainBranch": "Башкы: Тоголок Молдо 5 / Киевская",
-    "secondBranch": "2-филиал: @cornerkg_2",
-    "classicBranch": "Классика: @corner_classickg",
+    "secondBranch": "2-дүкөн: @cornerkg_2",
+    "classicBranch": "Винтаж: @corner_classickg",
+    "info": "Маалымат",
     "rights": "Бардык укуктар корголгон"
+  },
+  "pages": {
+    "stubMessage": "Бул бөлүм даярдалууда. Учурда — бардык суроолор WhatsApp'та, менеджер дароо жооп берет.",
+    "delivery": {
+      "title": "Жеткирүү жана төлөм",
+      "subtitle": "Бишкектен өзү алуу жана Кыргызстан боюнча жеткирүү"
+    },
+    "returns": {
+      "title": "Кайтаруу жана алмашуу",
+      "subtitle": "14 күн ичинде кайтаруу жана алмашуу шарттары"
+    },
+    "faq": {
+      "title": "Көп берилген суроолор",
+      "subtitle": "Кардарлардын типтүү суроолоруна жооптор"
+    },
+    "about": {
+      "title": "Дүкөн жөнүндө",
+      "subtitle": "Cornerkg Бишкекте — стрит-стайл, ресейл, түп нускалар"
+    }
   },
   "errors": {
     "title": "Бир нерсе туура болбоду",

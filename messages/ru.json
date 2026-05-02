@@ -4,7 +4,11 @@
     "catalog": "Каталог",
     "cart": "Корзина",
     "profile": "Профиль",
-    "favorites": "Избранное"
+    "favorites": "Избранное",
+    "delivery": "Доставка",
+    "returns": "Возврат",
+    "faq": "FAQ",
+    "about": "О нас"
   },
   "common": {
     "currency": "с",
@@ -53,7 +57,8 @@
     "requiredField": "Обязательное поле",
     "invalidPhone": "Введите корректный номер: +996XXXXXXXXX или 0XXXXXXXXX",
     "tooLong": "Слишком длинно",
-    "loading": "Загрузка…"
+    "loading": "Загрузка…",
+    "writeOnWhatsapp": "Написать в WhatsApp"
   },
   "categories": {
     "sneakers": "Кроссовки",
@@ -65,11 +70,11 @@
     "all": "Всё"
   },
   "home": {
-    "heroKicker": "Бишкек • с 10:00 до 21:00",
+    "heroKicker": "Бишкек • каждый день 10:00 — 21:00",
     "heroTitle": "Стрит-стайл и кроссовки в Бишкеке",
-    "heroSubtitle": "Cornerkg — оригинальные вещи и ресейл редких пар. 2 филиала, доставка по КР, оплата любым удобным способом.",
+    "heroSubtitle": "Cornerkg — оригинальные вещи и ресейл редких пар. Доставка по Кыргызстану, оплата картой, переводом или наличными.",
     "heroCta": "В каталог",
-    "heroCtaSecondary": "Связаться в WhatsApp",
+    "heroCtaSecondary": "Написать в WhatsApp",
     "categoriesTitle": "Категории",
     "hitsTitle": "Хиты продаж",
     "newTitle": "Новинки",
@@ -80,7 +85,7 @@
     "contactHours": "Каждый день, 10:00 — 21:00",
     "contactPhone": "+996 709 99 32 89",
     "contactInstagram": "@cornerkg_",
-    "contactBranches": "2 филиала + классика",
+    "contactBranches": "2 магазина в Бишкеке",
     "hoursLabel": "Часы работы"
   },
   "catalog": {
@@ -89,7 +94,7 @@
     "categoryAll": "Все категории",
     "brandAll": "Все бренды",
     "noResults": "По вашим фильтрам ничего не найдено",
-    "itemsCount": "товаров",
+    "itemsCount": "{count, plural, one {# товар} few {# товара} many {# товаров} other {# товара}}",
     "showFilters": "Фильтры",
     "hideFilters": "Скрыть"
   },
@@ -124,13 +129,51 @@
     "orderDate": "Дата",
     "orderStatusSent": "Отправлен в WhatsApp"
   },
+  "reviews": {
+    "1": {
+      "name": "Айдана",
+      "text": "Покупаю уже не первый раз. Кроссы — оригиналы, упаковка как из бутика. 10/10."
+    },
+    "2": {
+      "name": "Тимур",
+      "text": "Заказал Tech Fleece — в этот же день забрал из 2-го филиала. Менеджер быстро ответил, размер подошёл."
+    },
+    "3": {
+      "name": "Бегайым",
+      "text": "Лучший выбор стрит-стайла в Бишкеке. Цены ок, бренды реально топ."
+    },
+    "4": {
+      "name": "Илья",
+      "text": "Брал ресейл-кеды Yeezy, состояние в коробке — как обещали. Респект."
+    }
+  },
   "footer": {
-    "tagline": "Cornerkg — стрит-стайл магазин в Бишкеке",
-    "branches": "Филиалы",
+    "tagline": "Cornerkg — магазин стритстайла и кроссовок в Бишкеке.",
+    "branches": "Магазины",
     "mainBranch": "Основной: Тоголок Молдо 5 / Киевская",
-    "secondBranch": "2-й филиал: @cornerkg_2",
-    "classicBranch": "Классика: @corner_classickg",
+    "secondBranch": "2-й магазин: @cornerkg_2",
+    "classicBranch": "Винтаж: @corner_classickg",
+    "info": "Информация",
     "rights": "Все права защищены"
+  },
+  "pages": {
+    "stubMessage": "Этот раздел готовится. Пока — все вопросы в WhatsApp, менеджер ответит сразу.",
+    "delivery": {
+      "title": "Доставка и оплата",
+      "subtitle": "Самовывоз из Бишкека и доставка по Кыргызстану"
+    },
+    "returns": {
+      "title": "Возврат и обмен",
+      "subtitle": "Условия возврата и обмена в течение 14 дней"
+    },
+    "faq": {
+      "title": "Частые вопросы",
+      "subtitle": "Ответы на типовые вопросы клиентов"
+    },
+    "about": {
+      "title": "О магазине",
+      "subtitle": "Cornerkg в Бишкеке — стрит-стайл, ресейл, оригиналы"
+    }
   },
   "errors": {
     "title": "Что-то пошло не так",
