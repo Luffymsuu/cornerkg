@@ -85,14 +85,16 @@
     "contactHours": "Every day, 10:00 — 21:00",
     "contactPhone": "+996 709 99 32 89",
     "contactInstagram": "@cornerkg_",
-    "contactBranches": "2 stores in Bishkek",
+    "contactBranches": "Bishkek store",
     "hoursLabel": "Opening hours"
   },
   "catalog": {
     "title": "Catalog",
+    "titleLong": "Cornerkg catalog — originals & resell in Bishkek",
     "filtersTitle": "Filters",
     "categoryAll": "All categories",
     "brandAll": "All brands",
+    "sizeAll": "Any size",
     "noResults": "No items match your filters",
     "itemsCount": "{count, plural, one {# item} other {# items}}",
     "showFilters": "Filters",
@@ -127,7 +129,8 @@
     "noFavs": "No favorites yet",
     "orderId": "Order",
     "orderDate": "Date",
-    "orderStatusSent": "Sent to WhatsApp"
+    "orderStatusSent": "Sent to WhatsApp",
+    "localOnlyNote": "This data is saved only in this browser. To place an order, message us on WhatsApp — the manager will get in touch."
   },
   "reviews": {
     "1": {
@@ -136,7 +139,7 @@
     },
     "2": {
       "name": "Timur",
-      "text": "Ordered Tech Fleece — picked it up the same day at the 2nd store. Manager replied fast, size was right."
+      "text": "Ordered Tech Fleece — picked it up the same day at the store. Manager replied fast, size was right."
     },
     "3": {
       "name": "Begaiym",
@@ -150,29 +153,128 @@
   "footer": {
     "tagline": "Cornerkg — streetwear store in Bishkek",
     "branches": "Stores",
-    "mainBranch": "Main: Togolok Moldo 5 / Kievskaya",
+    "mainBranch": "Bishkek, Togolok Moldo 5 / Kievskaya",
     "secondBranch": "2nd: @cornerkg_2",
-    "classicBranch": "Vintage: @corner_classickg",
+    "classicBranch": "Vintage line on Instagram: @corner_classickg",
     "info": "Info",
     "rights": "All rights reserved"
   },
   "pages": {
-    "stubMessage": "This section is being prepared. For now — DM us on WhatsApp, the manager replies right away.",
     "delivery": {
       "title": "Delivery & payment",
-      "subtitle": "Pickup in Bishkek and delivery across Kyrgyzstan"
+      "subtitle": "Pickup in Bishkek and delivery across Kyrgyzstan",
+      "footerCta": "The manager will quote the exact tariff and timing for your order — message us on WhatsApp with the delivery address and order details.",
+      "sections": {
+        "pickup": {
+          "title": "In-store pickup",
+          "body": "Free pickup from the store at Togolok Moldo 5 / Kievskaya, Bishkek. Every day 10:00 — 21:00. Message us on WhatsApp before you visit and the manager will have your size ready."
+        },
+        "bishkek": {
+          "title": "Courier in Bishkek",
+          "body": "In-city delivery is usually same-day or next-day. The price depends on your district and order weight — the manager will confirm the exact amount during checkout on WhatsApp."
+        },
+        "regions": {
+          "title": "Across Kyrgyzstan",
+          "body": "We ship via CDEK, Yandex Delivery, or local courier services — picking the fastest and most affordable option for your destination. Standard transit time is 1–3 days nationwide."
+        },
+        "timing": {
+          "title": "Timing",
+          "body": "Pickup — instant. Bishkek courier — today or tomorrow. Regions — 1–3 days. During peak periods (sales, holidays) timing may stretch; the manager always confirms the actual ETA at checkout."
+        },
+        "payment": {
+          "title": "Payment",
+          "body": "Card (Visa / MasterCard / Elcart), bank transfer to the store account, or cash on pickup. For region orders we usually request a transfer before shipment; cash on delivery is available case by case — discuss with the manager."
+        }
+      }
     },
     "returns": {
       "title": "Returns & exchanges",
-      "subtitle": "14-day return and exchange policy"
+      "subtitle": "14-day return and exchange policy",
+      "footerCta": "Still have questions about a return? Message the manager on WhatsApp with your order number — we'll sort it out fast.",
+      "sections": {
+        "conditions": {
+          "title": "Return conditions",
+          "body": "Returns are accepted if the original packaging, tags, receipt, and product condition are intact. Footwear must not have been worn outdoors — once they hit the street, the return cannot be processed."
+        },
+        "timeline": {
+          "title": "Timeline",
+          "body": "You have 14 days from delivery to request a return. After that, returns aren't accepted, except for manufacturing defects."
+        },
+        "exclusions": {
+          "title": "What can't be returned",
+          "body": "Underwear and socks after unpacking. Accessories and care products after use. Items with tags removed. Items with visible signs of wear or use."
+        },
+        "defect": {
+          "title": "Defective items",
+          "body": "Send us photos and a short video on WhatsApp on the day you receive the item. We'll arrange the return shipment at our expense and either refund you or offer an exchange for the same or an equivalent item."
+        },
+        "process": {
+          "title": "How to start a return",
+          "body": "1. Message the manager on WhatsApp with your order number and the reason for the return.\n2. Agree on a return method: courier in Bishkek, or shipment via a delivery service for regions.\n3. Once we receive the item and verify its condition, we refund within 1–3 business days using the original payment method."
+        }
+      }
     },
     "faq": {
       "title": "Frequently asked questions",
-      "subtitle": "Answers to typical customer questions"
+      "subtitle": "Answers to typical customer questions",
+      "footerCta": "Didn't find your answer? Message the manager on WhatsApp — we reply within an hour during work hours.",
+      "items": {
+        "originals": {
+          "q": "Are these originals or fakes?",
+          "a": "Cornerkg only sells originals. Some items are deadstock from official distributors or their authorized partners; some are resell with verified provenance. Each item is checked against serials, tags, packaging, and reference photos before going on the site."
+        },
+        "payment": {
+          "q": "How can I pay?",
+          "a": "We accept card (Visa / MasterCard / Elcart), bank transfer to the store account, and cash on pickup. The manager will send full payment details on WhatsApp after you place the order."
+        },
+        "delivery": {
+          "q": "How long does delivery take in Bishkek and across Kyrgyzstan?",
+          "a": "Within Bishkek — usually same-day or next-day by courier. Across Kyrgyzstan — 1–3 days via CDEK, Yandex Delivery, or local services. Exact tariff and timing depend on the chosen method — the manager confirms during checkout."
+        },
+        "returns": {
+          "q": "Can I return or exchange an item?",
+          "a": "Yes, within 14 days if the original packaging, tags, receipt, and product condition are preserved. Footwear must not have been worn outdoors. Underwear and accessories after use are non-returnable. If the item arrived defective — we'll cover the return shipment and refund or exchange."
+        },
+        "tryOn": {
+          "q": "Can I try items on before buying?",
+          "a": "Yes, visit the store at Togolok Moldo 5 / Kievskaya, Bishkek, every day 10:00 — 21:00. If your size isn't on the floor right now, the manager will check stock and prepare the item for fitting — message us ahead on WhatsApp."
+        },
+        "size": {
+          "q": "What if my size isn't in stock?",
+          "a": "Message us on WhatsApp — the manager will check the store and the vintage line (@corner_classickg). If your size isn't physically here, we can order it in; usually 7–14 days depending on brand."
+        },
+        "regions": {
+          "q": "I'm outside Bishkek. How do I order?",
+          "a": "Place an order via the cart or message WhatsApp directly. We ship via CDEK / Yandex Delivery or a local courier. Payment is by transfer before shipment or cash on delivery, depending on the region and order amount."
+        },
+        "contact": {
+          "q": "What's the fastest way to reach you?",
+          "a": "WhatsApp +996 709 99 32 89 — we reply within an hour during work hours. You can also DM Instagram @cornerkg_ or visit the store at Togolok Moldo 5 / Kievskaya."
+        }
+      }
     },
     "about": {
       "title": "About the store",
-      "subtitle": "Cornerkg in Bishkek — streetwear, reseller, originals"
+      "subtitle": "Cornerkg in Bishkek — streetwear, reseller, originals",
+      "footerCta": "Want to know more or get advice on a specific pair? Message the manager on WhatsApp.",
+      "sections": {
+        "who": {
+          "title": "Who we are",
+          "body": "Cornerkg is a streetwear and sneaker store in Bishkek. We're not a marketplace with a million SKUs — we're a curator. We pick what we'd wear ourselves and what we'd happily recommend to friends."
+        },
+        "what": {
+          "title": "What we sell",
+          "body": "Original sneakers from Nike, Jordan, Yeezy, New Balance, and others. Hoodies and tees from cult streetwear brands. Outerwear and accessories. Some items are deadstock from official distributors; some are rare resell that's hard to find on the open market."
+        },
+        "where": {
+          "title": "Where to find us",
+          "body": "Store: Togolok Moldo 5 / Kievskaya, Bishkek. Every day, 10:00 — 21:00. Main Instagram: @cornerkg_. The vintage line lives separately at @corner_classickg."
+        },
+        "why": {
+          "title": "Why people trust us",
+          "body": "We play the long game with our customers, so fakes and shady stock don't make it through our doors. Each item is checked against serials, tags, packaging, and reference photos before going on the site. If anything doesn't add up, the item simply doesn't get listed. One honest pair beats ten 'sort-of-original' ones."
+        }
+      }
     }
   },
   "errors": {

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { StubPage } from "@/components/info/StubPage";
+import { FaqList } from "@/components/info/FaqList";
 
 export const metadata: Metadata = {
   title: "Частые вопросы",
   description:
-    "Ответы на типовые вопросы клиентов магазина Cornerkg в Бишкеке.",
+    "Ответы на типовые вопросы клиентов магазина Cornerkg в Бишкеке: оригинальность, оплата, доставка, возврат, размеры.",
 };
 
 export default function FaqPage() {
-  return <StubPage pageKey="faq" />;
+  return <FaqList />;
 }

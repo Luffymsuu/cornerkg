@@ -14,7 +14,7 @@ export function Hero() {
       <div className="absolute inset-0 -z-10">
         <Image
           src="/hero.jpg"
-          alt="streetwear hero"
+          alt=""
           fill
           priority
           sizes="100vw"

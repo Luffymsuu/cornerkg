@@ -23,7 +23,7 @@ export const PRODUCTS: Product[] = [
     images: [
       "/products/nike-air-max-tn-black-lime-1.jpg",
       "/products/nike-air-max-tn-black-lime-2.jpg",
-      "/products/yeezy-boost-350-v2-zebra-2.jpg",
+      "/products/nike-air-max-tn-black-lime-3.jpg",
     ],
     description:
       "Культовый силуэт Nike Tuned Air. Капсульная подошва из видимого Air, верх из синтетики и сетки. Подходит для уличного образа и спорта.",
@@ -33,7 +33,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "p-002",
-    slug: "nike-air-jordan-1-low-shadow",
+    slug: "air-jordan-1-low-shadow",
     title: "Air Jordan 1 Low Shadow",
     brand: "Jordan",
     category: "sneakers",
@@ -111,8 +111,8 @@ export const PRODUCTS: Product[] = [
     price: 6500,
     sizes: ["S", "M", "L", "XL"],
     images: [
-      "/products/champion-reverse-weave-hoodie-1.jpg",
-      "/products/champion-reverse-weave-hoodie-2.jpg",
+      "/products/nike-tech-fleece-hoodie-black-1.jpg",
+      "/products/nike-tech-fleece-hoodie-black-2.jpg",
     ],
     description:
       "Худи Tech Fleece — тёплая, лёгкая, отлично держит форму. Уличный must-have.",
@@ -148,7 +148,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["S", "M", "L", "XL"],
     images: [
       "/products/stussy-basic-tee-white-1.jpg",
-      "/products/palace-tee-tri-ferg-2.jpg",
+      "/products/stussy-basic-tee-white-2.jpg",
     ],
     description:
       "Классическая футболка Stüssy с фирменным логотипом. Плотный хлопок 220 г/м².",
@@ -182,7 +182,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["S", "M", "L", "XL"],
     images: [
       "/products/nike-tech-fleece-pants-grey-1.jpg",
-      "/products/denim-tears-cotton-wreath-jeans-2.jpg",
+      "/products/nike-tech-fleece-pants-grey-2.jpg",
     ],
     description: "Зауженные джоггеры Tech Fleece, идеальная пара к худи.",
     condition: "новое",
@@ -197,7 +197,7 @@ export const PRODUCTS: Product[] = [
     price: 7200,
     sizes: ["30", "32", "34", "36"],
     images: [
-      "/products/denim-tears-cotton-wreath-jeans-1.jpg",
+      "/products/carhartt-double-knee-pants-1.jpg",
       "/products/carhartt-double-knee-pants-2.jpg",
     ],
     description:
@@ -215,8 +215,8 @@ export const PRODUCTS: Product[] = [
     price: 12900,
     sizes: ["S", "M", "L", "XL"],
     images: [
-      "/products/moncler-down-jacket-2.jpg",
-      "/products/moncler-down-jacket-1.jpg",
+      "/products/the-north-face-puffer-1996-1.jpg",
+      "/products/the-north-face-puffer-1996-2.jpg",
     ],
     description:
       "Классический пуховик 1996 Nuptse. Тёплый, ветрозащитный, легендарный силуэт.",

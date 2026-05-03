@@ -2,13 +2,19 @@
 
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils/cn";
-import { listBrands, listCategories, getPriceBounds } from "@/lib/data/repository";
+import {
+  listBrands,
+  listCategories,
+  listSizes,
+  getPriceBounds,
+} from "@/lib/data/repository";
 import type { Category } from "@/lib/data/types";
 import { formatPrice } from "@/lib/utils/formatPrice";
 
 export interface FilterValue {
   category: Category | "all";
   brand: string | "all";
+  size: string | "all";
   minPrice: number;
   maxPrice: number;
   sort: "newest" | "price_asc" | "price_desc";
@@ -26,6 +32,7 @@ export function Filters({
   const t = useTranslations();
   const brands = listBrands();
   const categories = listCategories();
+  const sizes = listSizes();
   const bounds = getPriceBounds();
 
   return (
@@ -86,6 +93,30 @@ export function Filters({
               onClick={() => onChange({ brand: b })}
             >
               {b}
+            </Pill>
+          ))}
+        </div>
+      </div>
+
+      {/* Size */}
+      <div>
+        <div className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+          {t("common.size")}
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          <Pill
+            active={value.size === "all"}
+            onClick={() => onChange({ size: "all" })}
+          >
+            {t("catalog.sizeAll")}
+          </Pill>
+          {sizes.map((s) => (
+            <Pill
+              key={s}
+              active={value.size === s}
+              onClick={() => onChange({ size: s })}
+            >
+              {s}
             </Pill>
           ))}
         </div>
@@ -177,11 +208,12 @@ function Pill({
     <button
       type="button"
       onClick={onClick}
+      aria-pressed={active}
       className={cn(
         "rounded-full border px-3 py-1.5 text-xs font-medium transition",
         full ? "w-full text-left" : "",
         active
-          ? "border-lime-400 bg-lime-400/10 text-lime-300"
+          ? "border-lime-400 bg-lime-400/20 text-lime-200 shadow-[0_0_0_1px_rgba(163,230,53,0.4)_inset]"
           : "border-zinc-800 bg-zinc-950/40 text-zinc-300 hover:border-zinc-600",
       )}
     >

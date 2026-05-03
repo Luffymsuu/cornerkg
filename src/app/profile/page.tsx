@@ -22,9 +22,12 @@ export default function ProfilePage() {
 
   return (
     <Container className="py-10 sm:py-14">
-      <h1 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
+      <h1 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">
         {t("profile.title")}
       </h1>
+      <p className="mb-6 max-w-2xl text-sm text-zinc-400">
+        {t("profile.localOnlyNote")}
+      </p>
 
       <div className="mb-6 flex flex-wrap gap-2">
         {tabs.map((tb) => (

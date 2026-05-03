@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { StubPage } from "@/components/info/StubPage";
+import { InfoPage } from "@/components/info/InfoPage";
 
 export const metadata: Metadata = {
   title: "Доставка и оплата",
   description:
-    "Самовывоз из Бишкека и доставка по Кыргызстану. Условия будут уточнены.",
+    "Самовывоз из Бишкека и доставка по Кыргызстану. Конкретные тарифы и сроки уточняйте в WhatsApp.",
+  robots: { index: false, follow: false },
 };
 
+const SECTIONS = ["pickup", "bishkek", "regions", "timing", "payment"] as const;
+
 export default function DeliveryPage() {
-  return <StubPage pageKey="delivery" />;
+  return <InfoPage pageKey="delivery" sections={SECTIONS} />;
 }

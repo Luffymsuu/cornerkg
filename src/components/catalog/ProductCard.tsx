@@ -23,15 +23,16 @@ export function ProductCard({
   const fav = useFavoritesStore((s) => s.has(product.id));
   const toggle = useFavoritesStore((s) => s.toggle);
 
-  // Show up to 4 explicit sizes; collapse longer lists with an ellipsis.
-  // Avoids the misleading "40–45" diapason that implies every size in between
-  // is in stock.
-  const sizesPreview =
-    product.sizes.length === 0
-      ? null
-      : product.sizes.length <= 4
-        ? product.sizes.join(", ")
-        : `${product.sizes.slice(0, 4).join(", ")}…`;
+  // Show all explicit sizes for shorter lists; collapse longer lists with
+  // a trailing count so we never silently hide a single size for layout
+  // reasons. Avoids the misleading "40–45" diapason and the previous
+  // "40, 41, 42, 43…" that omitted exactly one size on 5-size SKUs.
+  const sizesPreview = (() => {
+    const sizes = product.sizes;
+    if (sizes.length === 0) return null;
+    if (sizes.length <= 6) return sizes.join(", ");
+    return `${sizes.slice(0, 4).join(", ")} +${sizes.length - 4}`;
+  })();
 
   return (
     <motion.div

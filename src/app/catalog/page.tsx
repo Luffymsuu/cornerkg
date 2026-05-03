@@ -25,6 +25,7 @@ function CatalogInner() {
     return {
       category: cat,
       brand: "all",
+      size: "all",
       minPrice: 0,
       maxPrice: 0,
       sort: "newest",
@@ -46,6 +47,7 @@ function CatalogInner() {
       listProducts({
         category: filters.category,
         brand: filters.brand,
+        size: filters.size,
         minPrice: filters.minPrice || undefined,
         maxPrice: filters.maxPrice || undefined,
         sort: filters.sort,
@@ -60,6 +62,7 @@ function CatalogInner() {
     setFilters({
       category: "all",
       brand: "all",
+      size: "all",
       minPrice: 0,
       maxPrice: 0,
       sort: "newest",
@@ -72,7 +75,7 @@ function CatalogInner() {
       <div className="mb-6 flex items-end justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            {t("catalog.title")}
+            {t("catalog.titleLong")}
           </h1>
           <p className="mt-2 text-sm text-zinc-400">
             {t("catalog.itemsCount", { count: products.length })} ·{" "}
